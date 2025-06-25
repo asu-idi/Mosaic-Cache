@@ -68,6 +68,16 @@ export LD_LIBRARY_PATH=${SW_DIR}/hiredis/lib:$LD_LIBRARY_PATH
 ```
 test package installation: python3 → import adios2
 
+## Workloads
+The `workloads/` directory contains Python scripts for generating and evaluating simulation query workloads, including:
+
+`query_generator.py`: Generates queries with configurable overlaps at both the query level and the data content level.
+
+`check_generated_queries.py`: Validate generated queries.
+
+`generated_queries/`: Contains example output workloads.
+
+
 ## Python Sample Script
 ```python3
 
