@@ -190,6 +190,7 @@ adios_option(Derived_Variable    "Enable support for derived variables" ON)
 adios_option(PIP        "Enable support for pip packaging" OFF)
 adios_option(XRootD     "Enable support for XRootD" AUTO)
 adios_option(KVCACHE    "Enable support for KVCache" OFF)
+adios_option(SPATIALINDEX "Enable support for SpatialIndex" OFF)
 
 option(ADIOS2_LIBADIOS_MODE "Install only C/C++ library components" OFF)
 mark_as_advanced(ADIOS2_LIBADIOS_MODE)
@@ -266,7 +267,7 @@ set(ADIOS2_CONFIG_OPTS
     DataMan DataSpaces HDF5 HDF5_VOL MHS SST Fortran MPI Python PIP Blosc2 BZip2
     LIBPRESSIO MGARD MGARD_MDR PNG SZ ZFP DAOS IME O_DIRECT Sodium Catalyst SysVShMem UCX
     ZeroMQ Profiling Endian_Reverse Derived_Variable AWSSDK XRootD GPU_Support CUDA Kokkos
-    Kokkos_CUDA Kokkos_HIP Kokkos_SYCL Campaign KVCACHE
+    Kokkos_CUDA Kokkos_HIP Kokkos_SYCL Campaign KVCACHE SPATIALINDEX
 )
 
 GenerateADIOSHeaderConfig(${ADIOS2_CONFIG_OPTS})

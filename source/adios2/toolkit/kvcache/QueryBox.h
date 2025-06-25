@@ -272,6 +272,10 @@ public:
                 {
                     maxInteract = intersection;
                     maxSourceBox = box;
+                    if (maxInteract.size() == this->size())
+                    {
+                        break;
+                    }
                 }
             }
         }
@@ -284,6 +288,8 @@ public:
         }
 
         cachedBoxes.push_back(maxSourceBox);
+        std::cout << "[Partial] Going to retrieve " << maxSourceBox.toString() << " from cache" << std::endl;
+        std::cout << "[Partial] Going to reuse " << maxInteract.toString() << " from cache" << std::endl;
 
         // If the interaction of current box is equal to the new request, return, avoid cutting
         if (this->size() == maxInteract.size())

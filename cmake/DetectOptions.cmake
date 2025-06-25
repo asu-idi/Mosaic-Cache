@@ -635,6 +635,17 @@ if (hiredis_FOUND)
   message(STATUS "redis cli binary is ${REDIS_CLI_BINARY}")
 endif()
 
+if(ADIOS2_USE_SpatialIndex STREQUAL AUTO)
+  find_package(SpatialIndex QUIET)
+elseif(ADIOS2_USE_SpatialIndex)
+  find_package(SpatialIndex REQUIRED)
+endif()
+if(SpatialIndex_FOUND)
+  set(ADIOS2_HAVE_SPATIALINDEX TRUE)
+  message(STATUS "SpatialIndex found. Turn on SpatialIndex")
+endif()
+
+
 # Multithreading
 find_package(Threads REQUIRED)
 

@@ -55,6 +55,8 @@ public:
     ~KVCacheCommon() = default;
     void OpenConnection(){};
     void CloseConnection(){};
+    void Set(const char *key, size_t size, void *data){};
+    void Get(const char *key, size_t size, void *data){};
     void AppendCommandInBatch(const char *key, size_t mode, size_t size, void *data){};
     void ExecuteBatch(const char *key, size_t mode, size_t size, void *data){};
     bool Exists(std::string key) { return false; };

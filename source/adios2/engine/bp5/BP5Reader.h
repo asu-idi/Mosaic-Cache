@@ -18,6 +18,7 @@
 #include "adios2/toolkit/format/bp5/BP5Deserializer.h"
 #include "adios2/toolkit/format/buffer/heap/BufferMalloc.h"
 #include "adios2/toolkit/kvcache/KVCacheCommon.h"
+#include "adios2/toolkit/kvcache/KVCacheMetadata.h"
 #include "adios2/toolkit/remote/Remote.h"
 #include "adios2/toolkit/transportman/TransportMan.h"
 
@@ -104,6 +105,7 @@ private:
 
     /* KVCache for remote data */
     kvcache::KVCacheCommon m_KVCache;
+    kvcache::KVCacheMetadata m_KVCacheMetadata;
     std::unordered_map<std::string, MinVarInfo *> MinBlocksInfoMap;
 
     /* Fingerprint to verify local validity against remote data */
@@ -263,6 +265,10 @@ private:
     void PerformLocalGets();
 
     void PerformRemoteGets();
+
+    void PerformRemoteGetsWithTraditionalKVCache();
+
+    void PerformRemoteGetsWithKVCacheAndMetaManager();
 
     void PerformRemoteGetsWithKVCache();
 
