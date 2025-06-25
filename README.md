@@ -1,4 +1,4 @@
-# [HotStorage '25] Unlocking the Unusable: A Proactive Caching Framework for Reusing Partial Overlapped Data
+# [HotStorage '25] Unlocking the Unusable: A Proactive Caching Framework for Reusing Partial Overlapped Data [[pdf]](https://dl.acm.org/doi/10.1145/3736548.3737839)
 
 Mosaic-Cache, a proactive and general caching framework that enables applications with efficient partial overlapped data reuse through novel overlap-aware cache interfaces for fast content-level reuse.
 
